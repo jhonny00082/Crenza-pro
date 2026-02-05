@@ -1,1 +1,12 @@
-https://github.com/jhonny00082/Crenza-pro/blob/main/app.py
+from flask import Flask
+import os
+
+app = Flask(__name__)
+
+@app.route("/")
+def home():
+    return "<h1>✅ CRENZA PRO ATTIVO!</h1><p>Se vedi questo, funziona.</p>"
+
+if __name__ == "__main__":
+    port = int(os.environ.get("PORT", 5000))
+    app.run(host="0.0.0.0", port=port)
